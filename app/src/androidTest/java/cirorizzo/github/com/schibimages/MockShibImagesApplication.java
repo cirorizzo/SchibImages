@@ -4,7 +4,7 @@ import cirorizzo.github.com.schibimages.injection.InjectionShibImagesPresenterIm
 
 public class MockShibImagesApplication extends ShibImagesApplication {
     @Override
-    protected InjectionShibImagesPresenterImpl createInjection() {
+    protected InjectionShibImagesPresenterImpl createInjectionShibImagesPresenterImpl() {
         return new MockInjectionShibImagesPresenterImpl();
     }
 }

@@ -1,13 +1,8 @@
 package cirorizzo.github.com.schibimages.model;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.ImageView;
+import android.support.annotation.NonNull;
 
-import cirorizzo.github.com.schibimages.R;
-
-public class ImagesURLsData extends RecyclerView.ViewHolder {
-
+public class ImagesURLsData {
     private static final String[] IMAGE_URLS = {
             "http://t1.gstatic.com/images?q=tbn:ANd9GcS0cjDhf5MPvwP-yjPWeAJMSsrAEbQoFeRQU78-B-F0fftw5OdBrwr4o1Uy",
             "http://t2.gstatic.com/images?q=tbn:ANd9GcQob9105oHMBENJBgrmXmTCRSs14m8FVZfOf25WTN7lO3qT-GJs6N_YXG7G",
@@ -75,13 +70,11 @@ public class ImagesURLsData extends RecyclerView.ViewHolder {
             "http://t0.gstatic.com/images?q=tbn:ANd9GcSy3hdtaKNWke9UxJprF2IaxyTQPD1J32xElYoOnm-GOznIiW2K8p3KjHTm"
     };
 
-    public ImageView imgVw_shib;
+    public int getSize() {
+        return IMAGE_URLS.length;
+    }
 
-
-    public ImagesURLsData(View itemView) {
-        super(itemView);
-
-        imgVw_shib = (ImageView) itemView.findViewById(R.id.imgVw_shib);
-
+    public String getImageURL(@NonNull int position) {
+        return ((position >= 0) && (position < IMAGE_URLS.length)) ? IMAGE_URLS[position] : null;
     }
 }
